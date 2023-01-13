@@ -1,0 +1,27 @@
+<p>course works!</p>
+
+<h1>Course Entry Form</h1>
+
+<form #cForm="ngForm" (ngSubmit)="addCourseDetails()">
+
+    Course Name:
+    <input name="courseName" class="form-control" type="text" [(ngModel)] ="c.courseName" required>
+<br>
+    Course Price:
+    <input name="coursePrice" class="form-control" type="number" [(ngModel)] ="c.coursePrice" required>
+<br>
+    Course Duration:
+
+    <input name="courseDuration" class="form-control" type="text" [(ngModel)] ="c.courseDuration" required>
+<br>
+    <button type="submit" value="Submit Data">Add</button>
+
+</form>
+<br>
+<button (click)="viewAllCourses()" >View All Courses</button>
+<br>
+<div *ngFor="let x of courses">
+    {{x.id}}-->{{x.courseName}}-->{{x.coursePrice}}-->{{x.courseDuration}}||<button (click)="deleteCourse(x.id)">Delete</button>
+
+
+</div>
